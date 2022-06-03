@@ -8,3 +8,12 @@
 :root {
   --font-main: "Montserrat", sans-serif;
 }
+#root {
+  background-color: #f0f3f9;
+}
+.App {
+  display: flex;
+  flex-direction: row;
+  max-width: 1366px;
+  margin: auto;
+}
