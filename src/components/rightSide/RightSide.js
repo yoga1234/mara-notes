@@ -17,6 +17,9 @@ const RightSide = () => {
           cupiditate laboriosam omnis!
         </p>
       </div>
+      {/* <div className="note-container empty">
+        Please select a note to display.
+      </div> */}
     </div>
   );
 };

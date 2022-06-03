@@ -39,6 +39,13 @@
   overflow-y: scroll;
   width: 100%;
 }
+.notes-empty {
+  font-family: var(--font-main);
+  font-size: 18px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
 .notes-btn,
 .archive-btn {
   flex: 1;

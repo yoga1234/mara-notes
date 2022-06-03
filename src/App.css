@@ -17,3 +17,6 @@
   max-width: 1366px;
   margin: auto;
 }
+.display-none {
+  display: none;
+}
