@@ -9,6 +9,7 @@
   font-family: var(--font-main);
   text-align: center;
   margin: 20px auto 0 auto;
+  opacity: 75%;
 }
 .search-input {
   margin: 20px auto 0 auto;
@@ -33,6 +34,11 @@
   column-gap: 10px;
   width: 100%;
 }
+.notes-container {
+  max-height: 380px;
+  overflow-y: scroll;
+  width: 100%;
+}
 .notes-btn,
 .archive-btn {
   flex: 1;
@@ -48,6 +54,9 @@
   padding-bottom: 15px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   cursor: pointer;
+}
+.note.active {
+  background-color: #c7cfdb;
 }
 .note:hover {
   background-color: #d0d3d8;
@@ -65,4 +74,16 @@
   font-weight: 300;
   font-family: var(--font-main);
   margin-top: 5px;
+}
+.button-add {
+  width: 90%;
+  display: block;
+  margin: 15px auto 0 auto;
+  font-family: var(--font-main);
+  font-size: 18px;
+  color: #fff;
+  height: 45px;
+  background-color: #0064fe;
+  border: none;
+  border-radius: 7px;
 }
