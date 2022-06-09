@@ -2,6 +2,13 @@ import React from "react";
 import "./LeftSide.css";
 
 const LeftSide = () => {
+  const cutText = (input) => {
+    if (input.length > 20) {
+      return input.substring(0, 50) + "...";
+    }
+    return input;
+  };
+
   return (
     <div className="left-container">
       <h1>MARANOTES</h1>
@@ -17,38 +24,12 @@ const LeftSide = () => {
           <div className="note">
             <h3 className="note-title">This is title</h3>
             <p className="note-content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam,
-              rerum!
+              {cutText(
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, rerum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea nam nostrum autem architecto, laboriosam ipsam quo rerum deleniti porro similique beatae dolorum, at nesciunt nisi, quidem aliquid aliquam accusantium sapiente?"
+              )}
             </p>
           </div>
-          <div className="note">
-            <h3 className="note-title">This is title</h3>
-            <p className="note-content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam,
-              rerum!
-            </p>
-          </div>
-          <div className="note">
-            <h3 className="note-title">This is title</h3>
-            <p className="note-content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam,
-              rerum!
-            </p>
-          </div>
-          <div className="note">
-            <h3 className="note-title">This is title</h3>
-            <p className="note-content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam,
-              rerum!
-            </p>
-          </div>
-          <div className="note">
-            <h3 className="note-title">This is title</h3>
-            <p className="note-content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam,
-              rerum!
-            </p>
-          </div>
+
           {/* <div className="notes-empty">Notes is empty</div> */}
         </div>
         <button className="button-add">New Note</button>
