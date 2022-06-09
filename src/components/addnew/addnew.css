@@ -1,0 +1,94 @@
+.addnew-container {
+  height: 100%;
+  width: 100%;
+  max-width: 1366px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  display: block;
+  padding-top: 30px;
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.addnew-container form {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  width: 500px;
+  margin: auto;
+  padding-left: 70px;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.addnew-container form div {
+  display: flex;
+  flex-direction: column;
+}
+.addnew-container form div label {
+  font-family: var(--font-main);
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.addnew-container form div .addnew-title {
+  width: 80%;
+  height: 50px;
+  font-family: var(--font-main);
+  padding-left: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+.addnew-container form div .addnew-content {
+  resize: none;
+  width: 80%;
+  height: 250px;
+  padding: 10px;
+  font-family: var(--font-main);
+  border-radius: 8px;
+}
+.addnew-container .addnew-add-button {
+  font-family: var(--font-main);
+  background-color: #0064fe;
+  color: white;
+  width: 80%;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  font-size: 18px;
+  border: none;
+  transition: box-shadow 0.2s ease;
+  cursor: pointer;
+}
+.addnew-container .addnew-add-button:hover {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.addnew-container .addnew-add-button:active {
+  opacity: 50%;
+}
+.addnew-container .addnew-close-button {
+  font-family: var(--font-main);
+  background-color: #0064fe;
+  color: white;
+  width: 80%;
+  height: 50px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  font-size: 18px;
+  border: none;
+  transition: box-shadow 0.2s ease;
+  cursor: pointer;
+}
+.addnew-container .addnew-close-button:hover {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.addnew-container .addnew-close-button:active {
+  opacity: 50%;
+}

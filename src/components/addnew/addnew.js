@@ -6,12 +6,19 @@ const AddNew = () => {
     <div className="addnew-container">
       <form>
         <div>
-          <label htmlFor="title">Title</label>
-          <input type="text" placeholder="Enter title here..." />
+          <label htmlFor="title">TITLE</label>
+          <input
+            className="addnew-title"
+            type="text"
+            placeholder="Enter title here..."
+          />
         </div>
-        <div></div>
-        <label htmlFor="content">Content</label>
-        <input type="text" placeholder="Enter content here..." />
+        <div>
+          <label htmlFor="content">CONTENT</label>
+          <textarea className="addnew-content" name="content"></textarea>
+        </div>
+        <button className="addnew-add-button">Add New</button>
+        <button className="addnew-close-button">Close</button>
       </form>
     </div>
   );

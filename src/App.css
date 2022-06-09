@@ -11,6 +11,9 @@
 #root {
   background-color: #f0f3f9;
 }
+.App {
+  overflow: hidden;
+}
 .App .content {
   display: flex;
   flex-direction: row;
