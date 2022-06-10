@@ -39,6 +39,7 @@ class App extends React.Component {
           createdAt: "2022-04-14T04:27:34.572Z",
         },
       ],
+      activeNote: {},
       archiveDisplay: true,
     };
   }
@@ -64,7 +65,7 @@ class App extends React.Component {
             notes={this.state.noteData}
             setStatus={this.changeArchiveStatus}
           />
-          <RightSide />
+          <RightSide active={this.state.activeNote} />
         </div>
       </div>
     );
