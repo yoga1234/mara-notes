@@ -1,7 +1,11 @@
 import React from "react";
+import NoteCard from "./components/NoteCard";
 import "./LeftSide.css";
 
-const LeftSide = ({ newNote }) => {
+const LeftSide = ({ newNote, notes, archiveStatus, setStatus }) => {
+  let newNotes = notes.filter((note) => {
+    return note.archived === archiveStatus;
+  });
   const cutText = (input) => {
     if (input.length > 20) {
       return input.substring(0, 50) + "...";
@@ -16,21 +20,28 @@ const LeftSide = ({ newNote }) => {
         <div className="menu-container">
           <input className="search-input" type="text" placeholder="Search" />
           <div className="button-container">
-            <button className="notes-btn">Notes</button>
-            <button className="archive-btn">Archives</button>
+            <button
+              className={archiveStatus ? "notes-btn active" : "notes-btn"}
+              onClick={setStatus}
+            >
+              Notes
+            </button>
+            <button
+              className={archiveStatus ? "notes-btn " : "notes-btn active"}
+              onClick={setStatus}
+            >
+              Archives
+            </button>
           </div>
         </div>
         <div className="notes-container">
-          <div className="note">
-            <h3 className="note-title">This is title</h3>
-            <p className="note-content">
-              {cutText(
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, rerum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea nam nostrum autem architecto, laboriosam ipsam quo rerum deleniti porro similique beatae dolorum, at nesciunt nisi, quidem aliquid aliquam accusantium sapiente?"
-              )}
-            </p>
-          </div>
-
-          {/* <div className="notes-empty">Notes is empty</div> */}
+          {notes === undefined ? (
+            <div className="notes-empty">Notes is empty</div>
+          ) : (
+            newNotes.map((note) => (
+              <NoteCard key={note.id} noteData={note} cutText={cutText} />
+            ))
+          )}
         </div>
         <button onClick={newNote} className="button-add">
           New Note

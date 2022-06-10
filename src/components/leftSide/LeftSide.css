@@ -107,3 +107,7 @@
 .button-add:active {
   opacity: 85%;
 }
+.notes-btn.active,
+.archive-btn.active {
+  background-color: #81d3a2;
+}
