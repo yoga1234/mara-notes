@@ -4,7 +4,7 @@ import "./LeftSide.css";
 
 const LeftSide = ({ newNote, notes, archiveStatus, setStatus }) => {
   let newNotes = notes.filter((note) => {
-    return note.archived === archiveStatus;
+    return note.archived === !archiveStatus;
   });
   const cutText = (input) => {
     if (input.length > 20) {
