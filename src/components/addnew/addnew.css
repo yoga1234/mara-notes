@@ -73,7 +73,7 @@
 }
 .addnew-container .addnew-close-button {
   font-family: var(--font-main);
-  background-color: #0064fe;
+  background-color: #f1655a;
   color: white;
   width: 80%;
   height: 50px;
@@ -91,4 +91,7 @@
 }
 .addnew-container .addnew-close-button:active {
   opacity: 50%;
+}
+.addnew-container.display-none {
+  display: none;
 }

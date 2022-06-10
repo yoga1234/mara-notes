@@ -1,7 +1,7 @@
 import React from "react";
 import "./LeftSide.css";
 
-const LeftSide = () => {
+const LeftSide = ({ newNote }) => {
   const cutText = (input) => {
     if (input.length > 20) {
       return input.substring(0, 50) + "...";
@@ -32,7 +32,9 @@ const LeftSide = () => {
 
           {/* <div className="notes-empty">Notes is empty</div> */}
         </div>
-        <button className="button-add">New Note</button>
+        <button onClick={newNote} className="button-add">
+          New Note
+        </button>
       </div>
     </div>
   );
