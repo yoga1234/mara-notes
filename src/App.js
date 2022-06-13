@@ -25,7 +25,7 @@ class App extends React.Component {
           createdAt: "2022-04-14T04:27:34.572Z",
         },
       ],
-      activeNote: {},
+      activeNote: false,
       archiveDisplay: true,
     };
   }
@@ -40,7 +40,13 @@ class App extends React.Component {
     });
   };
   changeActiveNote = (id) => {
-    this.setState({ activeNote: id });
+    // map to take the active note
+    let selectedNote = this.state.noteData.filter((note) => {
+      return note.id === id;
+    });
+
+    this.setState({ activeNote: selectedNote });
+    setTimeout(() => console.log(this.state.activeNote[0].id), 2000);
   };
 
   render() {
@@ -54,7 +60,9 @@ class App extends React.Component {
             newNote={this.newNote}
             notes={this.state.noteData}
             setStatus={this.changeArchiveStatus}
-            theActiveNote={this.state.activeNote}
+            theActiveNote={
+              this.state.activeNote === false ? 0 : this.state.activeNote[0].id
+            }
           />
           <RightSide active={this.state.activeNote} />
         </div>
