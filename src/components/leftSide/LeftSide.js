@@ -2,7 +2,14 @@ import React from "react";
 import NoteCard from "./components/NoteCard";
 import "./LeftSide.css";
 
-const LeftSide = ({ newNote, notes, archiveStatus, setStatus }) => {
+const LeftSide = ({
+  newNote,
+  notes,
+  archiveStatus,
+  setStatus,
+  activeNote,
+  theActiveNote,
+}) => {
   let newNotes = notes.filter((note) => {
     return note.archived === !archiveStatus;
   });
@@ -39,7 +46,13 @@ const LeftSide = ({ newNote, notes, archiveStatus, setStatus }) => {
             <div className="notes-empty">Notes is empty</div>
           ) : (
             newNotes.map((note) => (
-              <NoteCard key={note.id} noteData={note} cutText={cutText} />
+              <NoteCard
+                clicking={activeNote}
+                key={note.id}
+                noteData={note}
+                cutText={cutText}
+                theActiveNote={theActiveNote}
+              />
             ))
           )}
         </div>

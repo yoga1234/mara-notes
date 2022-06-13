@@ -18,22 +18,8 @@ class App extends React.Component {
           createdAt: "2022-04-14T04:27:34.572Z",
         },
         {
-          id: 123456,
-          title: "Testing 1",
-          body: "Testing 1234 Testing 1234 Testing 1234Testing 1234Testing 1234 Testing 1234",
-          archived: false,
-          createdAt: "2022-04-14T04:27:34.572Z",
-        },
-        {
           id: 123451,
           title: "Archived 1",
-          body: "Testing 1234 Testing 1234 Testing 1234Testing 1234Testing 1234 Testing 1234",
-          archived: true,
-          createdAt: "2022-04-14T04:27:34.572Z",
-        },
-        {
-          id: 123452,
-          title: "Archived 2",
           body: "Testing 1234 Testing 1234 Testing 1234Testing 1234Testing 1234 Testing 1234",
           archived: true,
           createdAt: "2022-04-14T04:27:34.572Z",
@@ -53,17 +39,22 @@ class App extends React.Component {
       archiveDisplay: !this.state.archiveDisplay,
     });
   };
+  changeActiveNote = (id) => {
+    this.setState({ activeNote: id });
+  };
 
   render() {
     return (
       <div className="App">
-        <AddNew newNote={this.newNote} />
+        <AddNew onClick={this.changeActiveNote} newNote={this.newNote} />
         <div className="content">
           <LeftSide
+            activeNote={this.changeActiveNote}
             archiveStatus={this.state.archiveDisplay}
             newNote={this.newNote}
             notes={this.state.noteData}
             setStatus={this.changeArchiveStatus}
+            theActiveNote={this.state.activeNote}
           />
           <RightSide active={this.state.activeNote} />
         </div>
