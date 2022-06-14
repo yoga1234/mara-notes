@@ -33,6 +33,9 @@
   margin-top: 20px;
   margin-bottom: 10px;
 }
+.addnew-container form div label[for="content"] {
+  margin-top: 10px;
+}
 .addnew-container form div .addnew-title {
   width: 80%;
   height: 50px;
@@ -56,7 +59,7 @@
   width: 80%;
   height: 50px;
   margin-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   border-radius: 8px;
   font-size: 18px;
   border: none;
@@ -94,4 +97,10 @@
 }
 .addnew-container.display-none {
   display: none;
+}
+.max-input-title {
+  font-family: var(--font-main);
+  font-size: 12px;
+  margin-left: 10px;
+  margin-top: 2px;
 }

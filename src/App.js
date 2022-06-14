@@ -27,6 +27,14 @@ class App extends React.Component {
       ],
       activeNote: false,
       archiveDisplay: true,
+      maxTitle: {
+        count: 0,
+        max: 40,
+      },
+      maxContent: {
+        count: 0,
+        max: 620,
+      },
     };
   }
   newNote = (e) => {

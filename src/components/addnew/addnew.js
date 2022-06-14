@@ -12,10 +12,12 @@ const AddNew = ({ newNote }) => {
             type="text"
             placeholder="Enter title here..."
           />
+          <span className="max-input-title">max title char: 40</span>
         </div>
         <div>
           <label htmlFor="content">CONTENT</label>
           <textarea className="addnew-content" name="content"></textarea>
+          <span className="max-input-title">max content char: 620</span>
         </div>
         <button className="addnew-add-button">Add New</button>
         <button onClick={newNote} className="addnew-close-button">
