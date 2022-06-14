@@ -2,16 +2,35 @@ import React from "react";
 import "./RightSide.css";
 
 const RightSide = ({ active }) => {
+  let data = active === undefined ? "-" : active[0];
+
   const checkSource = () => {
     let status;
-    if (active.archived === true) {
+    if (data === undefined) {
+      return "-";
+    }
+    if (data.archived === true) {
       status = "Archived";
-    } else if (active.archived === false) {
+    } else if (data.archived === false) {
       status = "Notes";
-    } else if (Object.keys(active).length === 0) {
+    } else if (Object.keys(data).length === 0) {
       status = "-";
     }
     return status;
+  };
+  const checkTitle = () => {
+    if (data === undefined) {
+      return "Loading...";
+    } else {
+      return data.title;
+    }
+  };
+  const checkBody = () => {
+    if (data === undefined) {
+      return "Loading...";
+    } else {
+      return data.body;
+    }
   };
   return (
     <div className="right-container">
@@ -24,14 +43,8 @@ const RightSide = ({ active }) => {
         </div>
       ) : (
         <div className="note-container">
-          <h3 className="right-note-title">Title goes here</h3>
-          <p className="right-note-content">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
-            saepe repudiandae dolores cupiditate incidunt eaque omnis iste nulla
-            odit assumenda. Lorem, ipsum dolor sit amet consectetur adipisicing
-            elit. Fugiat laudantium quia maiores aperiam vitae ad adipisci nemo
-            cupiditate laboriosam omnis!
-          </p>
+          <h3 className="right-note-title">{checkTitle()}</h3>
+          <p className="right-note-content">{checkBody()}</p>
         </div>
       )}
       {/* <div className="note-container">
