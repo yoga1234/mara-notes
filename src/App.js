@@ -56,10 +56,17 @@ class App extends React.Component {
     });
 
     this.setState({ activeNote: selectedNote });
-    setTimeout(() => console.log(this.state.activeNote[0].id), 2000);
   };
   countingTitle = (event) => {
-    console.log(event);
+    if (event === "reset") {
+      this.setState((prevState) => ({
+        maxTitle: {
+          ...prevState.maxTitle,
+          text: "",
+        },
+      }));
+      return;
+    }
     if (event.target.value.length > this.state.maxTitle.max) {
       return;
     }
@@ -72,6 +79,15 @@ class App extends React.Component {
     }));
   };
   countingContent = (event) => {
+    if (event === "reset") {
+      this.setState((prevState) => ({
+        maxContent: {
+          ...prevState.maxContent,
+          text: "",
+        },
+      }));
+      return;
+    }
     if (event.target.value.length > this.state.maxContent.max) {
       return;
     }
@@ -81,6 +97,20 @@ class App extends React.Component {
         text: event.target.value,
         count: event.target.value.length,
       },
+    }));
+  };
+  addNote = (data) => {
+    this.setState((prevState) => ({
+      noteData: [
+        ...prevState.noteData,
+        {
+          id: Date.now(),
+          title: data.title,
+          body: data.body,
+          archived: false,
+          createdAt: +new Date(),
+        },
+      ],
     }));
   };
 
@@ -98,6 +128,7 @@ class App extends React.Component {
           contentCount={this.state.maxContent.count}
           contentText={this.state.maxContent.text}
           contentMaxCount={this.state.maxContent.max}
+          addNote={this.addNote}
         />
         <div className="content">
           <LeftSide

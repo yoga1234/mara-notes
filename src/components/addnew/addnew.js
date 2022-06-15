@@ -11,10 +11,18 @@ const AddNew = ({
   contentCount,
   contentText,
   contentMaxCount,
+  addNote,
 }) => {
   return (
     <div className="addnew-container display-none">
-      <form>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          addNote({ title: e.target[0].value, body: e.target[1].value });
+          countingTitle("reset");
+          countingContent("reset");
+        }}
+      >
         <div>
           <label htmlFor="title">TITLE</label>
           <input
