@@ -1,7 +1,17 @@
 import React from "react";
 import "./AddNew.css";
 
-const AddNew = ({ newNote, countingTitle, textCount, maxTextCount, text }) => {
+const AddNew = ({
+  newNote,
+  countingTitle,
+  countingContent,
+  textCount,
+  maxTextCount,
+  text,
+  contentCount,
+  contentText,
+  contentMaxCount,
+}) => {
   return (
     <div className="addnew-container display-none">
       <form>
@@ -22,8 +32,15 @@ const AddNew = ({ newNote, countingTitle, textCount, maxTextCount, text }) => {
         </div>
         <div>
           <label htmlFor="content">CONTENT</label>
-          <textarea className="addnew-content" name="content"></textarea>
-          <span className="max-input-title">max content char: 620</span>
+          <textarea
+            className="addnew-content"
+            name="content"
+            value={contentText}
+            onChange={countingContent}
+          ></textarea>
+          <span className="max-input-title">
+            max content char: {contentMaxCount - contentCount}
+          </span>
         </div>
         <button className="addnew-add-button">Add New</button>
         <button onClick={newNote} className="addnew-close-button">
