@@ -28,10 +28,12 @@ class App extends React.Component {
       activeNote: false,
       archiveDisplay: true,
       maxTitle: {
+        text: "",
         count: 0,
         max: 40,
       },
       maxContent: {
+        text: "",
         count: 0,
         max: 620,
       },
@@ -56,11 +58,30 @@ class App extends React.Component {
     this.setState({ activeNote: selectedNote });
     setTimeout(() => console.log(this.state.activeNote[0].id), 2000);
   };
+  countingTitle = (event) => {
+    if (event.target.value.length > this.state.maxTitle.max) {
+      return;
+    }
+    this.setState((prevState) => ({
+      maxTitle: {
+        ...prevState.maxTitle,
+        text: event.target.value,
+        count: event.target.value.length,
+      },
+    }));
+  };
 
   render() {
     return (
       <div className="App">
-        <AddNew onClick={this.changeActiveNote} newNote={this.newNote} />
+        <AddNew
+          countingTitle={this.countingTitle}
+          onClick={this.changeActiveNote}
+          newNote={this.newNote}
+          textCount={this.state.maxTitle.count}
+          text={this.state.maxTitle.text}
+          maxTextCount={this.state.maxTitle.max}
+        />
         <div className="content">
           <LeftSide
             activeNote={this.changeActiveNote}
