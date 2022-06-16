@@ -48,6 +48,10 @@ const RightSide = ({ active }) => {
           <p className="right-note-content">{checkBody()}</p>
         </div>
       )}
+      <div className="right-button-container">
+        <button>Add to Archive</button>
+        <button>Delete Note</button>
+      </div>
     </div>
   );
 };

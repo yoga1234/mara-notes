@@ -41,3 +41,25 @@
   margin-top: 10px;
   opacity: 90%;
 }
+.right-button-container {
+  width: max-content;
+  margin: 50px auto 0 auto;
+}
+.right-button-container button {
+  width: 200px;
+  font-family: var(--font-main);
+  font-size: 18px;
+  color: #fff;
+  height: 45px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+.right-button-container button:nth-child(1) {
+  background-color: #007a75;
+  margin-right: 20px;
+}
+.right-button-container button:nth-child(2) {
+  background-color: #c73333;
+}
