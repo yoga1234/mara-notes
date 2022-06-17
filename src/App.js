@@ -113,6 +113,15 @@ class App extends React.Component {
       ],
     }));
   };
+  archivePosition = (id) => {
+    // push back to state
+    this.setState((prevState) => ({
+      noteData: prevState.noteData.map((el) =>
+        el.id === id ? { ...el, archived: !el.archived } : el
+      ),
+    }));
+    this.setState({ activeNote: false });
+  };
 
   render() {
     return (
@@ -141,7 +150,10 @@ class App extends React.Component {
               this.state.activeNote === false ? 0 : this.state.activeNote[0].id
             }
           />
-          <RightSide active={this.state.activeNote} />
+          <RightSide
+            archivePosition={this.archivePosition}
+            active={this.state.activeNote}
+          />
         </div>
       </div>
     );

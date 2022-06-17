@@ -1,7 +1,7 @@
 import React from "react";
 import "./RightSide.css";
 
-const RightSide = ({ active }) => {
+const RightSide = ({ active, archivePosition }) => {
   let data = active === undefined ? "-" : active[0];
 
   const checkSource = () => {
@@ -43,15 +43,25 @@ const RightSide = ({ active }) => {
           Please select a note to display.
         </div>
       ) : (
-        <div className="note-container">
-          <h3 className="right-note-title">{checkTitle()}</h3>
-          <p className="right-note-content">{checkBody()}</p>
-        </div>
+        <>
+          <div className="note-container">
+            <h3 className="right-note-title">{checkTitle()}</h3>
+            <p className="right-note-content">{checkBody()}</p>
+          </div>
+          <div className="right-button-container">
+            <button
+              onClick={() => {
+                archivePosition(data.id);
+              }}
+            >
+              {checkSource() === "Archived"
+                ? "Remove From Archive"
+                : "Add To Archive"}
+            </button>
+            <button>Delete Note</button>
+          </div>
+        </>
       )}
-      <div className="right-button-container">
-        <button>Add to Archive</button>
-        <button>Delete Note</button>
-      </div>
     </div>
   );
 };

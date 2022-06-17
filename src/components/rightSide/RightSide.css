@@ -46,7 +46,6 @@
   margin: 50px auto 0 auto;
 }
 .right-button-container button {
-  width: 200px;
   font-family: var(--font-main);
   font-size: 18px;
   color: #fff;
@@ -56,10 +55,17 @@
   cursor: pointer;
   transition: box-shadow 0.2s ease;
 }
+.right-button-container button:hover {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
 .right-button-container button:nth-child(1) {
+  width: 250px;
   background-color: #007a75;
   margin-right: 20px;
 }
 .right-button-container button:nth-child(2) {
   background-color: #c73333;
+  width: 200px;
 }
