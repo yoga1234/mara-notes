@@ -9,6 +9,7 @@ const LeftSide = ({
   setStatus,
   activeNote,
   theActiveNote,
+  searchFunction,
 }) => {
   let newNotes = notes.filter((note) => {
     return note.archived === !archiveStatus;
@@ -19,13 +20,17 @@ const LeftSide = ({
     }
     return input;
   };
-
   return (
     <div className="left-container">
       <h1>MARANOTES</h1>
       <div className="left-menu-container">
         <div className="menu-container">
-          <input className="search-input" type="text" placeholder="Search" />
+          <input
+            className="search-input"
+            type="text"
+            placeholder="Search"
+            onChange={searchFunction}
+          />
           <div className="button-container">
             <button
               className={archiveStatus ? "notes-btn active" : "notes-btn"}
@@ -42,7 +47,7 @@ const LeftSide = ({
           </div>
         </div>
         <div className="notes-container">
-          {notes === undefined ? (
+          {notes === undefined || notes.length === 0 ? (
             <div className="notes-empty">Notes is empty</div>
           ) : (
             newNotes.map((note) => (

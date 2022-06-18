@@ -22,6 +22,7 @@ class App extends React.Component {
         count: 0,
         max: 620,
       },
+      searchData: [],
     };
   }
   newNote = (e) => {
@@ -116,6 +117,13 @@ class App extends React.Component {
     alert("Note berhasil dihapus");
     this.setState({ activeNote: false });
   };
+  searchFunction = (e) => {
+    let val = e.target.value.toLowerCase();
+    let matches = this.state.noteData.filter((note) =>
+      note.title.toLowerCase().includes(val)
+    );
+    this.setState({ searchData: matches });
+  };
 
   render() {
     return (
@@ -138,11 +146,16 @@ class App extends React.Component {
             activeNote={this.changeActiveNote}
             archiveStatus={this.state.archiveDisplay}
             newNote={this.newNote}
-            notes={this.state.noteData}
+            notes={
+              this.state.searchData.length !== 0
+                ? this.state.searchData
+                : this.state.noteData
+            }
             setStatus={this.changeArchiveStatus}
             theActiveNote={
               this.state.activeNote === false ? 0 : this.state.activeNote[0].id
             }
+            searchFunction={this.searchFunction}
           />
           <RightSide
             archivePosition={this.archivePosition}
