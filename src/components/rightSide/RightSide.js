@@ -1,7 +1,7 @@
 import React from "react";
 import "./RightSide.css";
 
-const RightSide = ({ active, archivePosition }) => {
+const RightSide = ({ active, archivePosition, deleteNote }) => {
   let data = active === undefined ? "-" : active[0];
 
   const checkSource = () => {
@@ -58,7 +58,13 @@ const RightSide = ({ active, archivePosition }) => {
                 ? "Remove From Archive"
                 : "Add To Archive"}
             </button>
-            <button>Delete Note</button>
+            <button
+              onClick={() => {
+                deleteNote(data.id);
+              }}
+            >
+              Delete Note
+            </button>
           </div>
         </>
       )}

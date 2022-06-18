@@ -9,22 +9,7 @@ class App extends React.Component {
     super(props);
     this.newNote = this.newNote.bind(this);
     this.state = {
-      noteData: [
-        {
-          id: 12345,
-          title: "Testing",
-          body: "Testing 1234 Testing 1234 Testing 1234Testing 1234Testing 1234 Testing 1234",
-          archived: false,
-          createdAt: "2022-04-14T04:27:34.572Z",
-        },
-        {
-          id: 123451,
-          title: "Archived 1",
-          body: "Testing 1234 Testing 1234 Testing 1234Testing 1234Testing 1234 Testing 1234",
-          archived: true,
-          createdAt: "2022-04-14T04:27:34.572Z",
-        },
-      ],
+      noteData: [],
       activeNote: false,
       archiveDisplay: true,
       maxTitle: {
@@ -122,6 +107,15 @@ class App extends React.Component {
     }));
     this.setState({ activeNote: false });
   };
+  deleteNote = (id) => {
+    let newNotes = this.state.noteData.filter((note) => {
+      return note.id !== id;
+    });
+    console.log(newNotes);
+    this.setState({ noteData: newNotes });
+    alert("Note berhasil dihapus");
+    this.setState({ activeNote: false });
+  };
 
   render() {
     return (
@@ -153,6 +147,7 @@ class App extends React.Component {
           <RightSide
             archivePosition={this.archivePosition}
             active={this.state.activeNote}
+            deleteNote={this.deleteNote}
           />
         </div>
       </div>
