@@ -3,6 +3,7 @@ import "./App.css";
 import AddNew from "./components/addNew/AddNew";
 import LeftSide from "./components/leftSide/LeftSide";
 import RightSide from "./components/rightSide/RightSide";
+import { getInitialData } from "./utils";
 
 class App extends React.Component {
   constructor(props) {
@@ -124,6 +125,11 @@ class App extends React.Component {
     );
     this.setState({ searchData: matches });
   };
+  componentDidMount() {
+    this.setState({
+      noteData: getInitialData(),
+    });
+  }
 
   render() {
     return (
