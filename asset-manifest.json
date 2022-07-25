@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/mara-notes/static/css/main.9ef21366.css",
+    "main.js": "/mara-notes/static/js/main.393c0b1c.js",
+    "index.html": "/mara-notes/index.html",
+    "main.9ef21366.css.map": "/mara-notes/static/css/main.9ef21366.css.map",
+    "main.393c0b1c.js.map": "/mara-notes/static/js/main.393c0b1c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9ef21366.css",
+    "static/js/main.393c0b1c.js"
+  ]
+}
