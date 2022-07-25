@@ -16,7 +16,7 @@ const LeftSide = ({
   });
   const cutText = (input) => {
     if (input.length > 20) {
-      return input.substring(0, 50) + "...";
+      return input.substring(0, 47) + "...";
     }
     return input;
   };
